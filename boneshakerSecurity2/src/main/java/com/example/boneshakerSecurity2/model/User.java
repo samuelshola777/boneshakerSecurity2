@@ -3,6 +3,7 @@ package com.example.boneshakerSecurity2.model;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -14,6 +15,7 @@ import java.util.List;
 @Entity
 @Builder
 @AllArgsConstructor
+@Data
 @NoArgsConstructor
 @Table(name = "_user")
 public class User implements UserDetails {
