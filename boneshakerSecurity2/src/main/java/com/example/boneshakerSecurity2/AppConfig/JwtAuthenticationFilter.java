@@ -7,10 +7,12 @@ import jakarta.servlet.http.HttpServletResponse;
 import lombok.AllArgsConstructor;
 import lombok.NonNull;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 import java.io.IOException;
 @AllArgsConstructor
+@Component
 @Configuration
 public class JwtAuthenticationFilter extends OncePerRequestFilter {
     @Override
