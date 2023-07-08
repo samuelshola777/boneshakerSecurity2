@@ -18,12 +18,14 @@ import java.io.IOException;
 public class JwtAuthenticationFilter extends OncePerRequestFilter {
     @Override
     protected void doFilterInternal(@NonNull HttpServletRequest request,@NonNull HttpServletResponse response, @NonNull FilterChain filterChain) throws ServletException, IOException {
-// TODO: when we send a request we need to pass the authentication token withen the header
+// TODO: when we send a request we need to pass the authentication token withen the header of the request
         //TODO : to check we our request have jwt authentication token
        //TODO : trying to extract the header called authorization
         final String authenticationHeader = request.getHeader("Authorization");
         final String jwt;
-        if (authenticationHeader == null || authenticationHeader.startsWith("Bearer ")) {
+        //TODO: we want to check if out jwt authentication token header is null or
+    //    TODO: start with the keyword string Bearer and a space
+        if (authenticationHeader == null ||! authenticationHeader.startsWith("Bearer ")) {
             filterChain.doFilter(request, response);
             return;
         }
