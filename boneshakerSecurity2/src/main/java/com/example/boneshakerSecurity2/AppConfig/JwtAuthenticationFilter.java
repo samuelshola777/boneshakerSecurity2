@@ -51,9 +51,11 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 // T: we have to extract the Bearer and the white space from the token header that why we have the subString method
 
         jwt = authenticationHeader.substring(7);
+
+
     // TODO: now we have our the authentication token
 
     //TODO: where we extract our user email from  token using our jwt service call calling the extract username method
-        userEmail = jwtService.extractUserName()
+        userEmail = jwtService.extractUserName(jwt);
     }
 }
