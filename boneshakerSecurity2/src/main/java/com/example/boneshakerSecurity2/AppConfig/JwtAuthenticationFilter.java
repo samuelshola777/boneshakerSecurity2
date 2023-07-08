@@ -28,7 +28,11 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         if (authenticationHeader == null ||! authenticationHeader.startsWith("Bearer ")) {
             filterChain.doFilter(request, response);
             return;
+    //TODO: we have to break the method by using the keyword "return"so it will return a 403 to the unAuthorize user
         }
-
+//TODO: here is the Else part of the method where we extract to Jwt token from the headers
+// T: we have to extract the Bearer and the white space from the token header that why we have the subString method
+jwt = authenticationHeader.substring(7);
+// TODO: now we have out the authentication token
     }
 }
