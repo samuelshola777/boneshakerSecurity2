@@ -18,7 +18,7 @@ import java.io.IOException;
 //TODO: to make ths class a string bean we have to annotate with @component or @Service
 public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
-    private final JwtService jwtService;
+   private final JwtService  jwtService;
     @Override
     protected void doFilterInternal(@NonNull HttpServletRequest request,@NonNull HttpServletResponse response, @NonNull FilterChain filterChain) throws ServletException, IOException {
 
@@ -54,6 +54,6 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
     // TODO: now we have our the authentication token
 
     //TODO: where we extract our user email from  token using our jwt service call calling the extract username method
-        userEmail = JwtService.
+        userEmail = jwtService.extractUserName()
     }
 }
