@@ -14,6 +14,7 @@ import java.io.IOException;
 @AllArgsConstructor
 @Component
 @Configuration
+//TODO: to make ths class a string bean we have to annotate with @component or @Service
 public class JwtAuthenticationFilter extends OncePerRequestFilter {
     @Override
     protected void doFilterInternal(@NonNull HttpServletRequest request,@NonNull HttpServletResponse response, @NonNull FilterChain filterChain) throws ServletException, IOException {
